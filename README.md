@@ -22,8 +22,8 @@ You should **enable gstreamer** when you build **opencv**!!
 ## Components
 | Sources               |  Explanation                                            |
 |-----------------------|---------------------------------------------------------|
+| Arduino_code          | Arduino code directory.                                 |
 | ROS_modeule/          | Folder contains tiny yolo model and pretrained weights. |
-|   | MobileNet model with keras.                             |
 
 ## Installation
 Step 1 : Copy openarms folder in ROS_module folder to your catkin workspace.
