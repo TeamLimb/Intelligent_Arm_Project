@@ -1,0 +1,3 @@
+<launch>
+  <node pkg="openarms" type="detection.py" name="detection" output="screen" />
+</launch>
