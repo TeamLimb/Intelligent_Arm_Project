@@ -69,4 +69,4 @@ Anthony Kim : artit.anthony@gmail.com
 Ethan Kim : 4artit@gmail.com
 
 ## GNU General Public License v3.0
-Get more information about [license](https://github.com/ARTITLABS/OpenArms_Research/blob/master/LICENSE)
+Get more information about [license](https://github.com/ARTITLABS/OpenArms_Research_Project/blob/master/LICENSE)
