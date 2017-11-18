@@ -1,14 +1,20 @@
-# OpenArms_Research
+# OpenArms_Research_Project
+This is about OpenArms MK.2(Prosthetic Arm).
 
-We put cameras in the middle of the palm of existing OpenArms.
+We put cameras in the middle of the palm of existing OpenArms MK.2.
 
 And made it possible to perform different actions according to the object through real-time object recognition.
 
-We received a gold prize with this project at the Wearable Computer Contest (WCC) hosted by KAIST.
+We received a excellence award with this project at the Wearable Computer Contest (WCC) hosted by KAIST.
 ## Requirements
 #### Hardware
-* Raspberry pi 3  (with **Ubuntu Mate** )
-* Arduino nano
+* Raspberry pi 3  (with **Ubuntu Mate 16.04** )
+* Arduino nano  (Can use Arduino Uno)
+* Adafruit 16-Channel 12-bit PWM/Servo Driver - I2C interface - PCA9685
+* Servo Motor (Gotech-SER0011 x 9ea)
+* Li-Po Battery 2 cells(7.4V) 1300mAh
+* spycam for Pi
+* Rotary Switch (DFRobot-SEN0156)
 
 #### Software
 * Opencv >= 3.2.0 
@@ -16,6 +22,7 @@ We received a gold prize with this project at the Wearable Computer Contest (WCC
 * Keras >= 2.0.8
 * ROS kinetic
 * rosserial_arduino (arduino ros module)
+* Adafruit-PWM-Servo-Driver-Library (<https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library>)
 
 You should **enable gstreamer** when you build **opencv**!!
 
