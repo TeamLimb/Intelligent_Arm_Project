@@ -73,5 +73,7 @@ Anthony Kim : artit.anthony@gmail.com
 
 Ethan Kim : 4artit@gmail.com
 
+WonJae Ji : jiwi1005@gmail.com(if you want to ask about design contact him.)
+
 ## GNU General Public License v3.0
 Get more information about [license](https://github.com/ARTITLABS/OpenArms_Research_Project/blob/master/LICENSE)
