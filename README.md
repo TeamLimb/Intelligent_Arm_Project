@@ -6,6 +6,11 @@ We put cameras in the middle of the palm of existing OpenArms MK.2.
 And made it possible to perform different actions according to the object through real-time object recognition.
 
 We received a excellence award with this project at the Wearable Computer Contest (WCC) hosted by KAIST.
+
+![image1](./images/2017-10-19-08-00-10.jpg)
+
+![image2](./images/2017-10-19-08-00-33.jpg)
+
 ## Requirements
 #### Hardware
 * Raspberry pi 3  (with **Ubuntu Mate 16.04** )
