@@ -64,7 +64,38 @@ Default setting of port/you/connected is maybe /dev/ttyUSB0.
 rosrun rosserial_python serial_node.py /dev/ttyUSB0
 ```
 
-## Contact
+## Details
+All codes are made by ourselves.
+
+#### detection
+* We use [tiny yolo](https://pjreddie.com/darknet/yolo/) trained with [ms coco](https://pjreddie.com/darknet/yolo/).
+* We made model with Keras. (backend tensorflow)
+* Detection procedure takes only **2.7 seconds**. 
+ 
+Of course, there are more accurate models. 
+
+But, we have only 1 GB ram on raspberry pi even without gpu.
+
+Tiny yolo was the best choice.
+
+![image3](./images/yolo_output.png)
+
+Weights are transformed from [official site](https://pjreddie.com/darknet/yolo/) of yolo.
+
+| Model     | mAP  | FLOPS  | keras_weights |
+|-----------|------|--------|-----------------|
+| Tiny YOLO | 57.1 | 6.97bn | [weights](./ROS_module/openarms/src/model_data/yolo-coco.h5)
+
+## Next
+We'll make more advanced version prosthetic arm.
+
+It'll contain 
+* Dry electromyography sensor. 
+* Embedded board with GPU. (maybe nvidia [tx2](https://developer.nvidia.com/embedded/buy/jetson-tx2) board).
+* More powerful detection model. (maybe [RetinaNet](https://arxiv.org/abs/1708.02002))
+* Optimized model. (like [quantization](https://www.tensorflow.org/performance/quantization))
+
+## Contact to ARTIT!
 Any questions about our project are welcome!!
 
 Please contact us!
@@ -74,6 +105,8 @@ Anthony Kim : artit.anthony@gmail.com
 Ethan Kim : 4artit@gmail.com
 
 WonJae Ji : jiwi1005@gmail.com(if you want to ask about design contact him.)
+
+
 
 ## GNU General Public License v3.0
 Get more information about [license](https://github.com/ARTITLABS/OpenArms_Research_Project/blob/master/LICENSE)
