@@ -67,7 +67,7 @@ rosrun rosserial_python serial_node.py /dev/ttyUSB0
 ## Details
 All codes are made by ourselves.
 
-#### detection
+#### Detection
 * We use [tiny yolo](https://pjreddie.com/darknet/yolo/) trained with [ms coco](https://pjreddie.com/darknet/yolo/).
 * We made model with Keras. (backend tensorflow)
 * Detection procedure takes only **2.7 seconds**. 
@@ -87,7 +87,7 @@ Weights are transformed from [official site](https://pjreddie.com/darknet/yolo/)
 | Tiny YOLO | 57.1 | 6.97bn | [weights](./ROS_module/openarms/src/model_data/yolo-coco.h5)
 
 ## Next
-We'll make more advanced version prosthetic arm.
+We'll make more advanced prosthetic arm.
 
 It'll contain 
 * Dry electromyography sensor. 
