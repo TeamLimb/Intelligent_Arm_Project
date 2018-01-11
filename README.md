@@ -1,4 +1,7 @@
 # OpenArms_Research_Project
+
+<img src="./images/LOGO_openarms.png" width="200" height="200" />
+
 This is about OpenArms MK.2(Prosthetic Arm).
 
 We put cameras in the middle of the palm of existing OpenArms MK.2.
