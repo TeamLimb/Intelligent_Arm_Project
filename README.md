@@ -10,14 +10,14 @@
 
 **OPENARMS MK.2**
 
-We put a tiny camera in the center of the palm of original OpenArms MK.2 model.
-This camera's purpose is that recognize object and grab it which already defined optimized movement.
+This product has a tiny camera in the center of the palm.
+The camera's purpose is that recognize object and grab it which already defined optimized movement.
 We received a 2nd award at 2017 Wearable Computer Contest (WCC) hosted by KAIST.
 
 ## Requirements
 
 #### Hardware
-* Raspberry Pi 3  (Ubuntu Mate 16.04** )
+* Raspberry Pi 3  (Ubuntu Mate 16.04)
 * Arduino nano  (Arduino Uno also fine)
 * Adafruit 16-Channel 12-bit PWM/Servo Driver - I2C interface - PCA9685
 * Servo Motor (Gotech-SER0011 x **9ea**)
@@ -89,7 +89,7 @@ Weights are transformed from [official site](https://pjreddie.com/darknet/yolo/)
 | Tiny YOLO | 23.7 | 5.41 Bn | [weights](./ROS_module/openarms/src/model_data/yolo-coco.h5)
 
 ## Contact to Team LIMB
-Anthony Kim : artit.anthony@gmail.com - Perception Engineer
+Anthony Kim : artit.anthony@gmail.com - Perception Lead
 
 Ethan Kim : 4artit@gmail.com - Team Leader
 
