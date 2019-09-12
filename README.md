@@ -1,51 +1,50 @@
 # OpenArms_Research_Project
 
-<img src="./images/LOGO_openarms.png" width="200" height="200" />
+<img src="./assets/LOGO_openarms.png" width="200" height="200" />
 
-This is about OpenArms MK.2(Prosthetic Arm).
 
-We put cameras in the middle of the palm of existing OpenArms MK.2.
 
-And made it possible to perform different actions according to the object through real-time object recognition.
+![image1](./assets/product1.jpg)
 
-We received a excellence award with this project at the Wearable Computer Contest (WCC) hosted by KAIST.
+![image2](./assets/product2.jpg)
 
-![image1](./images/2017-10-19-08-00-10.jpg)
+**OPENARMS MK.2**
 
-![image2](./images/2017-10-19-08-00-33.jpg)
+We put a tiny camera in the center of the palm of original OpenArms MK.2 model.
+This camera's purpose is that recognize object and grab it which already defined optimized movement.
+We received a 2nd award at 2017 Wearable Computer Contest (WCC) hosted by KAIST.
 
 ## Requirements
+
 #### Hardware
-* Raspberry pi 3  (with **Ubuntu Mate 16.04** )
-* Arduino nano  (Can use Arduino Uno)
+* Raspberry Pi 3  (Ubuntu Mate 16.04** )
+* Arduino nano  (Arduino Uno also fine)
 * Adafruit 16-Channel 12-bit PWM/Servo Driver - I2C interface - PCA9685
-* Servo Motor (Gotech-SER0011 x 9ea)
+* Servo Motor (Gotech-SER0011 x **9ea**)
 * Li-Po Battery 2 cells(7.4V) 1300mAh
-* spycam for Pi
+* spy camera for Pi
 * Rotary Switch (DFRobot-SEN0156)
 
 #### Software
-* Opencv >= 3.2.0 
+* Opencv >= 3.2.0 (Add **enable gstreamer** option when you build it.)
 * Tensorflow >= 1.1.0
 * Keras >= 2.0.8
 * ROS kinetic
 * rosserial_arduino (arduino ros module)
 * Adafruit-PWM-Servo-Driver-Library (<https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library>)
 
-You should **enable gstreamer** when you build **opencv**!!
-
 ## Components
-| Sources               |  Explanation                                            |
-|-----------------------|---------------------------------------------------------|
-| Arduino_code          | Arduino code directory.                                 |
-| ROS_modeule/          | Folder contains tiny yolo model and pretrained weights. |
+| Sources                   | Explanation                                          |
+| ------------------------- | ---------------------------------------------------- |
+| arduino/                  | Arduino code directory.                              |
+| rospy/openarms_percepton/ | detection package with model and pretrained weights. |
 
 ## Installation
-Step 1 : Copy openarms folder in ROS_module folder to your catkin workspace.
+Step 1 : Copy openarms_perception package in rospy directory to your catkin workspace src directory.
 
-Step 2 : Upload Arduino code to your Arduino.
+Step 2 : Upload `openarms_control.ino` code to your Arduino.
 
-That's all !!
+*Please contact to design head if you need prosthetic arm design assets.*
 
 ## Quick Start
 Step 1 : Execute roscore.
@@ -54,62 +53,44 @@ roscore
 ```
 Step 2 : Launch ros module.
 ```
-roslaunch openarms detection.launch
+roslaunch openarms_perception detection.launch
 ```
-After 1-2 minutes, ready message will out on your screen.
+After 1-2 minutes, ready message are going to print out on your screen.
 
 Step 3 : Start ros serial communication!
 ```
 rosrun rosserial_python serial_node.py /port/you/connected
 ```
-Default setting of port/you/connected is maybe /dev/ttyUSB0.
+Default setting of port/you/connected might be /dev/ttyUSB0.
 ```
 rosrun rosserial_python serial_node.py /dev/ttyUSB0
 ```
 
-## Details
-All codes are made by ourselves.
+## Detection Model
+Our approach is using deep learning so we chose **Tiny Yolo** which has lighter and faster than any other yolo model.
 
 #### Detection
-* We use [tiny yolo](https://pjreddie.com/darknet/yolo/) trained with [ms coco](https://pjreddie.com/darknet/yolo/).
-* We made model with Keras. (backend tensorflow)
-* Detection procedure takes only **2.7 seconds**. 
- 
-Of course, there are more accurate models. 
+* We use [tiny yolo](https://pjreddie.com/darknet/yolo/) trained by [ms coco](https://pjreddie.com/darknet/yolo/) dataset.
+* Model is for Keras framework. (backend tensorflow)
+* Detection procedure takes about **2.7 seconds**. 
 
-But, we have only 1 GB ram on raspberry pi even without gpu.
+#### Why Tiny Yolo?
 
-Tiny yolo was the best choice.
+- RAM size of Raspberry Pi3 is only 1 GB.
 
-![image3](./images/yolo_output.png)
+- We need fastest detection model.
+
+  <img src="./assets/yolo_output.png" width="200" height="200" />
 
 Weights are transformed from [official site](https://pjreddie.com/darknet/yolo/) of yolo.
 
 | Model     | mAP  | FLOPS  | keras_weights |
 |-----------|------|--------|-----------------|
-| Tiny YOLO | 57.1 | 6.97bn | [weights](./ROS_module/openarms/src/model_data/yolo-coco.h5)
+| Tiny YOLO | 23.7 | 5.41 Bn | [weights](./ROS_module/openarms/src/model_data/yolo-coco.h5)
 
-## Next
-We'll make more advanced prosthetic arm.
+## Contact to Team LIMB
+Anthony Kim : artit.anthony@gmail.com - Perception Engineer
 
-It'll contain 
-* Dry electromyography sensor. 
-* Embedded board with GPU. (maybe nvidia [tx2](https://developer.nvidia.com/embedded/buy/jetson-tx2) board).
-* More powerful detection model. (maybe [RetinaNet](https://arxiv.org/abs/1708.02002))
-* Optimized model. (like [quantization](https://www.tensorflow.org/performance/quantization))
+Ethan Kim : 4artit@gmail.com - Team Leader
 
-## Contact to ARTIT!
-Any questions about our project are welcome!!
-
-Please contact us!
-
-Anthony Kim : artit.anthony@gmail.com
-
-Ethan Kim : 4artit@gmail.com
-
-WonJae Ji : jiwi1005@gmail.com(if you want to ask about design contact him.)
-
-
-
-## GNU General Public License v3.0
-Get more information about [license](https://github.com/ARTITLABS/OpenArms_Research_Project/blob/master/LICENSE)
+WonJae Ji : jiwi1005@gmail.com(Head of Design)

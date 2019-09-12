@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(openarms)
+project(openarms_perception)
 
 add_compile_options(-std=c++11)
 
